@@ -3,9 +3,12 @@
 //
 
 #include "Tree.h"
+#include "Node.h"
 
-//returns node t where the string equals val. If t has a prent, the pointer parent will contain its address.
+//returns node t where the string equals val. If t has a parent, the pointer parent will contain its address.
 Node* search(Node *p, string val, Node *&parent){
+    Node search,
+
 
 }
 
@@ -28,9 +31,9 @@ void process(Node *p){
 void deleteAllSubTree(Node *t);
 
 void addRoot(string newval){
-    Node
-
+    Tree(newNode);
 }
+
 bool addSon(string fatherquestion, string newanswer, string newval);
 string printToString(Node *p) {return "";}
 void deleteSubTree(string val);
