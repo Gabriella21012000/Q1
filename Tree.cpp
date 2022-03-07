@@ -37,8 +37,25 @@ void print(Node *p, int level = 0){
 }
 
 void process(Node *p){
-    print
+    Answer answer;
+    cout << p->value << endl;
 
+    while(!(p->isLeaf)){
+        cin >> answer.ans;
+
+        list<Answer*>::iterator it;
+        it = p->answersList.begin();
+        while(answer.ans != (*it)->ans){
+            if( it != p->answersList.end()){
+                it++;
+            }else{
+                cout << "invalid answer";
+                return;
+            }
+        }
+
+        process((*it)->son);
+    }
 }
 
 void deleteAllSubTree(Node *t);

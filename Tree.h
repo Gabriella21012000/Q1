@@ -66,6 +66,7 @@ public:
         deleteAllSubTree(root);
         root = 0;
     }
+
     void deleteAllSubTree(Node *t);
     void addRoot(string newval);
     bool addSon(string fatherquestion, string newanswer, string newval);
