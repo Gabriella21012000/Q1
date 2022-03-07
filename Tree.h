@@ -15,6 +15,7 @@ class Tree
     bool searchAndPrint(Node *p, string val);
     void print(Node *p, int level = 0);
     void process(Node *p);
+
 public:
     Tree() { root = NULL; }
     Tree(string s){
