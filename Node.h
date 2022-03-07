@@ -25,5 +25,3 @@ class Node {
 
 
 
-Node nextNode = node(val;
-node* pointerNewNode = ( ))
