@@ -19,7 +19,27 @@ class Tree
 
     }
 
-    void process(Node *p);
+    void process(Node *p){
+        Answer answer;
+        cout << p->value << endl;
+
+        while(!(p->isLeaf)){
+            cin >> answer.ans;
+
+            list<Answer*>::iterator it;
+            it = p->answersList.begin();
+            while(answer.ans != (*it)->ans){
+                if( it != p->answersList.end()){
+                    it++;
+                }else{
+                    cout << "invalid answer";
+                    return;
+                }
+            }
+
+            process((*it)->son);
+        }
+    }
 
     Node* search(Node *p, string val, Node *&parent) {
 

@@ -37,6 +37,7 @@ void print(Node *p, int level = 0){
 }
 
 void process(Node *p){
+    print
 
 }
 
