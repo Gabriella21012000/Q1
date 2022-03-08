@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/gabibondi/Desktop/Machon_Tal/Y2S2/Data Structure 2/programmingHW/Q1/Answer.h
+iostream
+-
+string
+-
+list
+-
+
+/Users/gabibondi/Desktop/Machon_Tal/Y2S2/Data Structure 2/programmingHW/Q1/Tree.h
+iostream
+-
+list
+-
+string
+-
+Answer.h
+/Users/gabibondi/Desktop/Machon_Tal/Y2S2/Data Structure 2/programmingHW/Q1/Answer.h
+
+/Users/gabibondi/Desktop/Machon_Tal/Y2S2/Data Structure 2/programmingHW/Q1/main.cpp
+iostream
+-
+list
+-
+string
+-
+Tree.h
+/Users/gabibondi/Desktop/Machon_Tal/Y2S2/Data Structure 2/programmingHW/Q1/Tree.h
+

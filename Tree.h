@@ -11,7 +11,29 @@ class Tree
 
     bool searchAndPrint(Node *p, string val);
 
-    void print(Node *p, int level = 0);
+    void print(Node* p, int level = 0)
+    {
+        //checks if empty tree
+        if (!p)
+        {
+            return;
+        }
+        //checks if node is a leaf
+        if (p->isLeaf);
+        {
+            //prints leaf answer and leaves function
+            cout << "   " << p->value << "endl";
+            return;
+        }
+        //if not empty tree and not a leaf prints node question
+        cout << p->value << "endl";
+        //enters for loop to print each answer in the for loop
+        for (auto it = p->answersList.begin(); it != p->answersList.end(); it++)
+        {
+            cout << ": " << (*it)->ans << "endl";
+            print((*it)->son, level);
+        }
+    }
 
     void process(Node *p){
         //Answer answer ;
@@ -67,9 +89,6 @@ public:
         root = 0;
     }
 
-    void deleteAllSubTree(Node *t);
-
-
     void addRoot(string newval){
         Tree(newNode);
     }
@@ -108,7 +127,23 @@ public:
     string printToString() { return printToString(root); }
 
     void deleteSubTree(string val){
-        
+            Node* subTreeNode = search(this->root, val, this->root);
+            deleteAllSubTree(subTreeNode);
+    }
+
+    void deleteAllSubTree(Node* t)
+    {
+        if (!t) {
+            return;
+        }
+        else
+        {
+            for (auto it = t->answersList.begin(); it != t->answersList.end(); it++) {
+                deleteAllSubTree((*it)->son);
+                delete (*it);
+                *it = NULL;
+            }
+        }
     }
 
     void process() { process(root); }
