@@ -93,7 +93,8 @@ public:
     }
 
     void addRoot(string newval){
-        Tree(newNode);
+       Tree tree;
+       tree = Tree(newval);
     }
 
     void searchAndPrint(string val)

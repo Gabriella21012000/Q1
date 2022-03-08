@@ -24,8 +24,8 @@ int main() {
          cin >> ch;
          switch (ch)
          {
-             case 'n':cout << "enter the main question (with no space) "; cin >> val; t.addRoot(val); break;
-             case 's':cout << "enter the question (with no space) "; cin >> father;
+             case 'n':cout << "enter the main question (with no space) " << endl; cin >> val; t.addRoot(val); break;
+             case 's':cout << "enter the question (with no space) " << endl; cin >> father;
                  cout << "enter the new answer (with no space) "; cin >> val;
                  cout << "enter the new solution(possible a new question, with no space) "; cin >> sol;
                  if (t.addSon(father, val, sol)) cout << "success\n"; else cout << "ERROR\n"; break;
