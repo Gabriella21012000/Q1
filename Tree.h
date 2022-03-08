@@ -9,7 +9,10 @@ class Tree
 {
     Node *root;
 
-    bool searchAndPrint(Node *p, string val);
+    bool searchAndPrint(Node *p, string val){
+        Node* valNode = search(p,val,p);
+        print(valNode, 0);
+    }
 
     void print(Node* p, int level = 0)
     {
