@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include "Answer.h"
 #include "Node.h"
 using namespace std;
 
@@ -14,17 +15,16 @@ class Tree
 
     bool searchAndPrint(Node *p, string val);
 
-    void print(Node *p, int level = 0){
-
-
-    }
+    void print(Node *p, int level = 0);
 
     void process(Node *p){
-        Answer answer;
+        //Answer answer ;
         cout << p->value << endl;
 
         while(!(p->isLeaf)){
-            cin >> answer.ans;
+            string ans;
+            cin >> ans;
+            Answer answer = Answer(ans, root);
 
             list<Answer*>::iterator it;
             it = p->answersList.begin();
@@ -59,17 +59,23 @@ class Tree
 
 public:
     Tree() { root = NULL; }
+
     Tree(string s){
         root = new Node(s);
     }
+
     ~Tree() {
         deleteAllSubTree(root);
         root = 0;
     }
 
     void deleteAllSubTree(Node *t);
-    void addRoot(string newval);
-    bool addSon(string fatherquestion, string newanswer, string newval);
+
+
+    void addRoot(string newval){
+        Tree(newNode);
+    }
+
     void searchAndPrint(string val)
     {
         if (!searchAndPrint(root, val))
@@ -98,9 +104,15 @@ public:
     }
 
     void printAllTree() { print(root); }
+
     string printToString(Node *p) {return "";}
+
     string printToString() { return printToString(root); }
-    void deleteSubTree(string val);
+
+    void deleteSubTree(string val){
+        
+    }
+
     void process() { process(root); }
 
 };

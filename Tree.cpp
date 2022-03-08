@@ -2,13 +2,13 @@
 // Created by Gabi Bondi on 01/03/2022.
 //
 
-#include "Tree.h"
+/*#include "Tree.h"
 #include "Node.h"
 #include <list>
-#include "Answer.h"
+#include "Answer.h"*/
 
 //returns node t where the string equals val. If t has a parent, the pointer parent will contain its address.
-Node* search(Node *p, string val, Node *&parent) {
+/*Node* search(Node *p, string val, Node *&parent) {
 
     if (!p) {
         return NULL;
@@ -22,21 +22,17 @@ Node* search(Node *p, string val, Node *&parent) {
          search((*it)->son,val,parent);
     }
 
-}
+}*/
 
-bool searchAndPrint(Node *p, string val){
+/*bool searchAndPrint(Node *p, string val){
 
 }
 
 void print(Node *p, int level = 0){
-    cout << p->value << endl;
-    std::list<Answer*>::iterator it;
-    for(it = p->answersList.begin(); it != p->answersList.end(); it++ ){
-        cout << it->ans << end;
-    }
-}
 
-void process(Node *p){
+}*/
+
+/*void process(Node *p){
     Answer answer;
     cout << p->value << endl;
 
@@ -56,9 +52,9 @@ void process(Node *p){
 
         process((*it)->son);
     }
-}
+}*/
 
-void deleteAllSubTree(Node *t);
+/*void deleteAllSubTree(Node *t);
 
 void addRoot(string newval){
     Tree(newNode);
@@ -69,4 +65,5 @@ void addRoot(string newval){
 
 
 string printToString(Node *p) {return "";}
-void deleteSubTree(string val);
+
+void deleteSubTree(string val);*/

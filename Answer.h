@@ -3,10 +3,9 @@
 //
 
 
-
+using namespace std;
 #include <iostream>
 #include <string> // for string class
-using namespace std;
 #include "Node.h"
 
 
@@ -18,6 +17,7 @@ public:
     string ans;
     Node* son;
     Answer(string s, Node *p) { ans = s; son = p; }
+    Answer(){ans = "No answer yet"; son = NULL; }
 };
 
 
