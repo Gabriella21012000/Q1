@@ -29,7 +29,7 @@ class Tree
             //return;
         }
 
-        if(!p->isLeaf) {
+        if(!(p->isLeaf)) {
             //if not empty tree and not a leaf prints node question
             cout << p->value << endl;
             //enters for loop to print each answer in the for loop
@@ -46,9 +46,8 @@ class Tree
         //prints out the node question
         cout << p->value << endl;
 
-        if(p->isLeaf){
-            return;
-        }
+        if(p->isLeaf) return ;
+
 
         // if the node is not a leaf
         else {
@@ -141,7 +140,7 @@ public:
 
     void deleteAllSubTree(Node* t)
     {
-        if (!t) {
+        if (!t){
             return;
         }
         else
@@ -149,7 +148,7 @@ public:
             for (auto it = t->answersList.begin(); it != t->answersList.end(); it++) {
                 deleteAllSubTree((*it)->son);
                 delete (*it);
-                *it = NULL;
+                (*it)= NULL;
             }
         }
     }
