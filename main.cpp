@@ -3,6 +3,7 @@
 #include <string>
 #include "Tree.h"
 
+//Authors Elisheva Wolowitz and Gabriella Bondi
 
 using namespace std;
 int main() {
@@ -26,8 +27,8 @@ int main() {
          {
              case 'n':cout << "enter the main question (with no space) " << endl; cin >> val; t.addRoot(val); break;
              case 's':cout << "enter the question (with no space) " << endl; cin >> father;
-                 cout << "enter the new answer (with no space) "; cin >> val;
-                 cout << "enter the new solution(possible a new question, with no space) "; cin >> sol;
+                 cout << "enter the new answer (with no space)" << endl; cin >> val;
+                 cout << "enter the new solution(possible a new question, with no space) " << endl; cin >> sol;
                  if (t.addSon(father, val, sol)) cout << "success\n"; else cout << "ERROR\n"; break;
              case 'd':cout << "enter value of subtree to delete (with no space) "; cin >> val; t.deleteSubTree(val);  break;
              case 'p':t.printAllTree();  break;

@@ -17,48 +17,52 @@ class Tree
     void print(Node* p, int level = 0)
     {
         //checks if empty tree
-        if (!p)
+        /*if (!p)
         {
             return;
-        }
+        }*/
         //checks if node is a leaf
         if (p->isLeaf);
         {
             //prints leaf answer and leaves function
-            cout << "   " << p->value << "endl";
-            return;
+            cout << "   " << p->value << endl;
+            //return;
         }
-        //if not empty tree and not a leaf prints node question
-        cout << p->value << "endl";
-        //enters for loop to print each answer in the for loop
-        for (auto it = p->answersList.begin(); it != p->answersList.end(); it++)
-        {
-            cout << ": " << (*it)->ans << "endl";
-            print((*it)->son, level);
+
+        if(!p->isLeaf) {
+            //if not empty tree and not a leaf prints node question
+            cout << p->value << endl;
+            //enters for loop to print each answer in the for loop
+            for (auto it = p->answersList.begin(); it != p->answersList.end(); it++) {
+                cout << ": " << (*it)->ans << endl;
+                cout << "    ";
+                print((*it)->son, level);
+            }
         }
     }
 
     void process(Node *p){
-        //Answer answer ;
+
+        //prints out the node question
         cout << p->value << endl;
 
-        while(!(p->isLeaf)){
+        if(p->isLeaf){
+            return;
+        }
+
+        // if the node is not a leaf
+        else {
             string ans;
             cin >> ans;
-            Answer answer = Answer(ans, root);
 
-            list<Answer*>::iterator it;
-            it = p->answersList.begin();
-            while(answer.ans != (*it)->ans){
-                if( it != p->answersList.end()){
-                    it++;
-                }else{
-                    cout << "invalid answer";
-                    return;
-                }
+            // iterate through the list to find the answer
+            list<Answer*>::iterator it; it = p->answersList.begin();
+            while(ans != (*it)->ans){
+                it++;
+
             }
-
-            process((*it)->son);
+            p = (*it)->son;
+            process(p);
         }
     }
 
@@ -93,8 +97,7 @@ public:
     }
 
     void addRoot(string newval){
-       Tree tree;
-       tree = Tree(newval);
+       this->root =  new Node(newval);
     }
 
     void searchAndPrint(string val)
@@ -114,9 +117,10 @@ public:
         Node *parent;
         Node *currentNode = search(root, fatherquestion,parent);
         if(currentNode != NULL){
+            currentNode->isLeaf = false;
             Node nextNode(newval); // if the node is found add a new node
             Node *ptrNextNode = &nextNode;
-            Answer a = Answer(fatherquestion, ptrNextNode );
+            //Answer a = Answer(fatherquestion, ptrNextNode );
             Answer* ans = new Answer(newanswer, ptrNextNode);
             currentNode->answersList.push_back(ans); // add a new answer pointer to the list
             return true;
@@ -124,15 +128,15 @@ public:
         return false;
     }
 
-    void printAllTree() { print(root); }
+    void printAllTree() { print(this->root,0); }
 
     string printToString(Node *p) {return "";}
 
     string printToString() { return printToString(root); }
 
     void deleteSubTree(string val){
-            Node* subTreeNode = search(this->root, val, this->root);
-            deleteAllSubTree(subTreeNode);
+        Node* subTreeNode = search(this->root, val, this->root);
+        deleteAllSubTree(subTreeNode);
     }
 
     void deleteAllSubTree(Node* t)
