@@ -12,12 +12,12 @@ using namespace std;
 class Node;
 
 //Answer: for each answer, the string, and the pointer to the node where to continue
-class Answer{
+class Answer {
 public:
     string ans;
     Node* son;
 
-    Answer(string s, Node *p) { ans = s; son = p; }
+    Answer(string s, Node* p) { ans = s; son = p; }
     //Answer(){ans = "No answer yet"; son = NULL; }
 };
 
@@ -36,6 +36,8 @@ public:
 };
 
 //Answer: for each answer, the string, and the pointer to the node where to continue
+
+
 
 
 
