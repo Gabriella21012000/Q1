@@ -3,7 +3,7 @@
 #include <string>
 #include "Tree.h"
 
-//Authors Elisheva Wolowitz and Gabriella Bondi
+//Authors Elisheva Wolovitz and Gabriella Bondi
 
 using namespace std;
 int main() {

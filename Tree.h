@@ -4,11 +4,14 @@
 #include "Answer.h"
 using namespace std;
 
+//Authors Elisheva Wolovitz and Gabriella Bondi
 
 class Tree
 {
     Node* root;
 
+
+    // search for the value val starting at the node p and print the remainder of the tree
     bool searchAndPrint(Node* p, string val) {
         Node* valNode = search(p, val, p);
         if (valNode != NULL)
@@ -19,6 +22,7 @@ class Tree
         return false;
     }
 
+    // prints out the tree in hierarchal order starting at p
     void print(Node* p, int level = 0)
     {
 
@@ -46,6 +50,7 @@ class Tree
         }
     }
 
+    // prints out the value of node p and then quests an answer, repeat the process recursively until you reach a decision
     void process(Node* p) {
 
         //prints out the node question
@@ -70,7 +75,6 @@ class Tree
         }
     }
 
-    //Node* search(Node *p, string val, Node *&parent);
     //returns node t where the string equals val. If t has a prent, the pointer parent will contain its address.
     Node* search(Node* p, string val, Node*& parent) {
 
@@ -89,27 +93,34 @@ class Tree
     }
 
 public:
+    // tree constructor
     Tree() { root = NULL; }
 
+
+    //constructor that accepts a string
     Tree(string s) {
         root = new Node(s);
     }
 
+    // tree destructor
     ~Tree() {
         deleteAllSubTree(root);
         root = 0;
     }
 
+    // starts a new tree by creating a root with newval
     void addRoot(string newval) {
         this->root = new Node(newval);
     }
 
+    // // search for the value val and print the tree
     void searchAndPrint(string val)
     {
         if (!searchAndPrint(root, val))
             cout << "Value not found" << endl;
     }
 
+    // search for the value val and prints root area
     void searchAndPrintArea(string val)
     {
         Node* parent;
@@ -117,6 +128,7 @@ public:
         if (area) print(root);
     }
 
+    //finds fatherquestion and adds newans to the list which has a pointer to a new node with newval
     bool addSon(string fatherquestion, string newanswer, string newval) {
         Node* parent;
         Node* currentNode = search(root, fatherquestion, parent);
@@ -137,17 +149,20 @@ public:
         return false;
     }
 
+    // calls print root inorder to print the entire tree n heirachial order
     void printAllTree() { print(this->root, 0); }
 
     string printToString(Node* p) { return ""; }
 
     string printToString() { return printToString(root); }
 
+    // delete the sub nodes of the node that has the value val
     void deleteSubTree(string val) {
         Node* subTreeNode = search(this->root, val, this->root);
         deleteAllSubTree(subTreeNode);
     }
 
+    //delete all the subtrees of the tree with root t
     void deleteAllSubTree(Node* t)
     {
         if (!t) {

@@ -5,9 +5,10 @@
 
 using namespace std;
 #include <iostream>
-#include <string> // for string class
+#include <string>
 #include <list>
-//#include "Node.h"
+
+//Authors Elisheva Wolovitz and Gabriella Bondi
 
 class Node;
 
